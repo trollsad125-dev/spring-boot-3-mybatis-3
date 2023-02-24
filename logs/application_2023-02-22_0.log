@@ -1,0 +1,62 @@
+2023-02-22T21:40:57.137+07:00  INFO 7556 --- [restartedMain] c.spring.practice.PracticeApplication    : Starting PracticeApplication using Java 17.0.6 with PID 7556 (E:\prj\spring-boot-practice\practice\target\classes started by Admin in E:\prj\spring-boot-practice\practice)
+2023-02-22T21:40:57.142+07:00  INFO 7556 --- [restartedMain] c.spring.practice.PracticeApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-02-22T21:40:57.214+07:00  INFO 7556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-22T21:40:57.214+07:00  INFO 7556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-22T21:40:58.253+07:00  INFO 7556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-22T21:40:58.284+07:00  INFO 7556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JPA repository interfaces.
+2023-02-22T21:40:58.852+07:00  INFO 7556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-22T21:40:58.861+07:00  INFO 7556 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-22T21:40:58.861+07:00  INFO 7556 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-22T21:40:58.924+07:00  INFO 7556 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-22T21:40:58.924+07:00  INFO 7556 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1709 ms
+2023-02-22T21:40:59.054+07:00  INFO 7556 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-22T21:40:59.109+07:00  INFO 7556 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-02-22T21:40:59.232+07:00  WARN 7556 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-02-22T21:40:59.324+07:00  INFO 7556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-22T21:40:59.661+07:00  INFO 7556 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e5d16ef
+2023-02-22T21:40:59.663+07:00  INFO 7556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-22T21:40:59.677+07:00  INFO 7556 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-02-22T21:40:59.677+07:00  WARN 7556 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL5Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-02-22T21:41:00.309+07:00 DEBUG 7556 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table customer 
+       add constraint FKo2oh87rk6lunf0lic1svc9y75 
+       foreign key (role_id) 
+       references role (id)
+2023-02-22T21:41:00.341+07:00  INFO 7556 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-22T21:41:00.349+07:00  INFO 7556 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-22T21:41:00.490+07:00  WARN 7556 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-22T21:41:01.185+07:00  INFO 7556 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@598b7240, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a2789ed, org.springframework.security.web.context.SecurityContextHolderFilter@1a53b8f1, org.springframework.security.web.header.HeaderWriterFilter@1cc15f00, org.springframework.security.web.csrf.CsrfFilter@2d17455c, org.springframework.security.web.authentication.logout.LogoutFilter@25e37bd9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1ff5d6d4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b785dc6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2254b0c9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@267c1ebc, org.springframework.security.web.access.ExceptionTranslationFilter@399a250b, org.springframework.security.web.access.intercept.AuthorizationFilter@52bd05af]
+2023-02-22T21:41:01.404+07:00  INFO 7556 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-02-22T21:41:01.443+07:00  INFO 7556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-22T21:41:01.453+07:00  INFO 7556 --- [restartedMain] c.spring.practice.PracticeApplication    : Started PracticeApplication in 4.721 seconds (process running for 6.518)
+2023-02-22T21:41:12.444+07:00  INFO 7556 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-22T21:41:12.444+07:00  INFO 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-22T21:41:12.444+07:00 DEBUG 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-02-22T21:41:12.444+07:00 DEBUG 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-02-22T21:41:12.444+07:00 DEBUG 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-02-22T21:41:12.445+07:00 DEBUG 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@77755879
+2023-02-22T21:41:12.445+07:00 DEBUG 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4f35bfe9
+2023-02-22T21:41:12.446+07:00 DEBUG 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-02-22T21:41:12.446+07:00  INFO 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-02-22T21:41:12.470+07:00 DEBUG 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2023-02-22T21:41:12.537+07:00 DEBUG 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-22T21:41:12.559+07:00 DEBUG 7556 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui.css", parameters={}
+2023-02-22T21:41:12.559+07:00 DEBUG 7556 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.css", parameters={}
+2023-02-22T21:41:12.561+07:00 DEBUG 7556 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2023-02-22T21:41:12.561+07:00 DEBUG 7556 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2023-02-22T21:41:12.561+07:00 DEBUG 7556 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2023-02-22T21:41:12.564+07:00 DEBUG 7556 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-22T21:41:12.568+07:00 DEBUG 7556 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-22T21:41:12.574+07:00 DEBUG 7556 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-22T21:41:12.582+07:00 DEBUG 7556 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-22T21:41:12.594+07:00 DEBUG 7556 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-22T21:41:21.746+07:00 DEBUG 7556 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api-docs/swagger-config", parameters={}
+2023-02-22T21:41:21.761+07:00 DEBUG 7556 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-22T21:41:21.860+07:00 DEBUG 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api-docs", parameters={}
+2023-02-22T21:41:21.985+07:00  WARN 7556 --- [http-nio-8080-exec-1] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.spring.practice.controller.impl.CustomerControllerImpl
+2023-02-22T21:41:22.045+07:00  INFO 7556 --- [http-nio-8080-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 148 ms
+2023-02-22T21:41:22.065+07:00 DEBUG 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-22T21:43:11.611+07:00  INFO 7556 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-22T21:43:11.611+07:00  INFO 7556 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-02-22T21:43:11.623+07:00  INFO 7556 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
