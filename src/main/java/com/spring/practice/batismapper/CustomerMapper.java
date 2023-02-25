@@ -4,13 +4,10 @@ package com.spring.practice.batismapper;
 import com.spring.practice.entity.Customer;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Component;
 
-
-import java.util.*;
+import java.util.List;
 
 @Mapper
-@Component
 public interface CustomerMapper {
     Customer findByCustomerId(@Param("id") int id);
 

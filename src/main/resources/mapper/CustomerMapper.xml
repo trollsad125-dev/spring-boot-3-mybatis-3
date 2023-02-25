@@ -13,7 +13,7 @@
         INSERT INTO customer (
          name
         , email
-        , phoneNumber
+        , phone_number
         ) VALUES (
         #{name}
         , #{email}
@@ -23,13 +23,14 @@
     <!--Get all customer-->
     <select id="getAllCustomer" resultType="customer">
         SELECT
-            id as id,
+            /*id as id,
             name as name,
             email as email,
                phone_number as phoneNumber,
                loyalty as loyalty,
                create_at as createAt
-               ,update_at as updateAt
+               ,update_at as updateAt*/
+        *
         FROM customer
     </select>
     <!--Update customer-->
@@ -37,7 +38,7 @@
         UPDATE customer SET
         name = #{name},
         email = #{email},
-        phoneNumber = #{phoneNumber},
+        phone_number = #{phoneNumber},
         loyalty = #{loyalty}
         WHERE ID = #{id};
     </update>
@@ -45,7 +46,7 @@
     <delete id="deleteById" parameterType="int">
         DELETE from customer WHERE ID = #{id};
     </delete>
-    <!--<resultMap id = "customerResult" type="customer">
+    <resultMap id = "customerResult" type="CUSTOMER">
         <result property = "id" column = "id"/>
         <result property = "name" column = "name"/>
         <result property = "email" column = "email"/>
@@ -53,5 +54,5 @@
         <result property = "loyalty" column = "loyalty"/>
         <result property = "createAt" column = "create_at"/>
         <result property = "updateAt" column = "update_at"/>
-    </resultMap>-->
+    </resultMap>
 </mapper>
