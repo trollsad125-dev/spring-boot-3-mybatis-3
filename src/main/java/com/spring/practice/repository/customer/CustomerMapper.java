@@ -1,5 +1,4 @@
-package com.spring.practice.batismapper;
-
+package com.spring.practice.repository.customer;
 
 import com.spring.practice.entity.Customer;
 import org.apache.ibatis.annotations.Mapper;

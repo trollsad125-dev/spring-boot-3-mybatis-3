@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.practice.repository.role.RoleMapper">
+    <!--Select Role by Name-->
+    <select id="findByRoleName" resultType="com.spring.practice.entity.Role">
+        SELECT
+            *
+        FROM role
+        WHERE role_name = #{roleName}
+    </select>
+    <!--INsert new Role -->
+    <insert id="createNewRole" useGeneratedKeys="true"  parameterType = "com.spring.practice.entity.Role">
+        INSERT INTO role (
+                          id
+                        , role_name
+                        , create_at
+        )
+        VALUES (
+                        id
+                        ,#{roleName}
+                        ,sysdate()
+                )
+    </insert>
+    <!--Get all Role-->
+    <select id="getAllRoles" resultMap="roleResult">
+        SELECT
+            *
+        FROM role
+    </select>
+    <!--Update Role-->
+    <update id="updateRoles" parameterType="com.spring.practice.entity.Role">
+        UPDATE role SET
+                            role_name = #{roleName},
+                            update_at = sysdate()
+        WHERE id = #{id};
+    </update>
+    <!--Delete Role-->
+    <delete id="deleteRoleById" parameterType="int">
+        DELETE from role WHERE id = #{id};
+    </delete>
+    <resultMap id = "roleResult" type = "com.spring.practice.entity.Role">
+        <result property = "id" column = "id"/>
+        <result property = "roleName" column = "role_name"/>
+        <result property = "createAt" column = "create_at"/>
+        <result property = "updateAt" column = "update_at"/>
+    </resultMap>
+</mapper>

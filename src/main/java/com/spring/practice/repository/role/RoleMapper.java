@@ -1,15 +1,12 @@
-package com.spring.practice.batismapper;
+package com.spring.practice.repository.role;
 
-import com.spring.practice.entity.Customer;
 import com.spring.practice.entity.Role;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Mapper
-@Component
 public interface RoleMapper {
     Role findByRoleName(@Param("roleName") String roleName);
 
