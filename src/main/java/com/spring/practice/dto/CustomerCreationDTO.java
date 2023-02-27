@@ -1,13 +1,13 @@
 package com.spring.practice.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
-
-@Getter @AllArgsConstructor
-public class CustomerDto {
+@Getter
+@Setter
+public class CustomerCreationDTO {
     private String name;
-    private String email;
     private String phoneNumber;
+    private String email;
     private String role;
 }

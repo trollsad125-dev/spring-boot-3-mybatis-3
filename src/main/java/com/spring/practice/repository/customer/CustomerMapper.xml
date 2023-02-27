@@ -2,14 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.practice.repository.customer.CustomerMapper">
     <resultMap id = "customerResult" type="com.spring.practice.entity.Customer">
-        <result property = "id" column = "id"/>
+        <id property = "id" column = "id"/>
         <result property = "name" column = "name"/>
         <result property = "email" column = "email"/>
         <result property = "phoneNumber" column = "phone_number"/>
         <result property = "loyalty" column = "loyalty"/>
         <result property = "createAt" column = "create_at"/>
         <result property = "updateAt" column = "update_at"/>
+        <collection property="roles" javaType="ArrayList" column="id" ofType="com.spring.practice.entity.Role" resultMap="roleResult"/>
     </resultMap>
+
+    <resultMap id="roleResult" type="com.spring.practice.entity.Role">
+        <id property="id" column="id"/>
+        <result property="createAt" column="create_at"/>
+        <result property="roleName" column="role_name"/>
+        <result property="updateAt" column="update_at"/>
+    </resultMap>
+    <!--Get all customer-->
+    <select id="getAllCustomer" resultMap="customerResult">
+        SELECT
+            *
+        FROM customer
+    </select>
     <!--Select Customer by Id-->
     <select id="findByCustomerId" resultMap="customerResult">
         SELECT
@@ -35,12 +49,7 @@
         , sysdate()
         )
     </insert>
-    <!--Get all customer-->
-    <select id="getAllCustomer" resultMap="customerResult">
-        SELECT
-        *
-        FROM customer
-    </select>
+
     <!--Update customer-->
     <update id="updateCustomer" parameterType="com.spring.practice.entity.Customer">
         UPDATE customer SET

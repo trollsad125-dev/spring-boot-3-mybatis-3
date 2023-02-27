@@ -14,13 +14,10 @@ import java.util.List;
 public class CustomerControllerImpl implements CustomerController {
 
     private final CustomerService customerService;
-    private final ModelMapper modelMapper;
 
 
-    public CustomerControllerImpl(CustomerService customerService,ModelMapper modelMapper) {
+    public CustomerControllerImpl(CustomerService customerService) {
         this.customerService = customerService;
-        this.modelMapper=modelMapper;
-
     }
 
 

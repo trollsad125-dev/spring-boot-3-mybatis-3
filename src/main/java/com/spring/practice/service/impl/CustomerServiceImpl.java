@@ -5,11 +5,11 @@ import com.spring.practice.dto.CustomerDto;
 import com.spring.practice.entity.Customer;
 import com.spring.practice.service.CustomerService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Mapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Slf4j
@@ -17,11 +17,11 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerMapper customerMapper;
-    private final ModelMapper modelMapper;
+    private final ModelMapper mapper;
 
-    public CustomerServiceImpl(CustomerMapper customerMapper,ModelMapper modelMapper){
+    public CustomerServiceImpl(CustomerMapper customerMapper, ModelMapper mapper){
         this.customerMapper=customerMapper;
-        this.modelMapper=modelMapper;
+        this.mapper=mapper;
     }
     @Override
     public CustomerDto createNewCustomer(CustomerDto customer) {
@@ -31,7 +31,8 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List<CustomerDto> getAllCustomer() {
         List<Customer> customerList = customerMapper.getAllCustomer();
-        return modelMapper.map(customerList, customerList.getClass());
+        return customerList.stream().map(customer -> mapper.map(customer,CustomerDto.class)).collect(Collectors.toList());
+
     }
 
     @Override
