@@ -4,7 +4,6 @@ import com.spring.practice.entity.Role;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-@Service
 public interface RoleService {
     // Create Operation
     Role createNewRole(Role role);
@@ -19,6 +18,6 @@ public interface RoleService {
     void deleteRole(Integer id);
 
     //Get role by name
-    Role getRoleByName(String name);
+    List<Role> getRoleByName(List<String> name);
 
 }

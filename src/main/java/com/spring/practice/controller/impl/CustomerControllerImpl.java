@@ -1,11 +1,13 @@
 package com.spring.practice.controller.impl;
 
 import com.spring.practice.controller.CustomerController;
+import com.spring.practice.dto.CustomerCreationDTO;
 import com.spring.practice.dto.CustomerDto;
 import com.spring.practice.service.CustomerService;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -42,7 +44,7 @@ public class CustomerControllerImpl implements CustomerController {
     }
 
     @Override
-    public CustomerDto createNewCustomer(CustomerDto customerDto) {
-        return null;
+    public int createNewCustomer(@RequestBody CustomerCreationDTO customerDto) {
+        return customerService.createNewCustomer(customerDto);
     }
 }

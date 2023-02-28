@@ -1,5 +1,6 @@
 package com.spring.practice.configuration;
 
+/*
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -10,12 +11,14 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+*/
 
 
-@EnableWebSecurity
-@Configuration
+
+//@Configuration
 public class SecurityConfig {
-    @Bean
+
+/*
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
                 .requestMatchers("/swagger-ui/**").permitAll()
@@ -25,12 +28,12 @@ public class SecurityConfig {
 
         return http.build();
     }
-    @Bean
+
     public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
-    @Bean
+
     public InMemoryUserDetailsManager userDetailsService() {
         UserDetails user = User.withUsername("root")
                 .password(passwordEncoder().encode("root"))
@@ -39,5 +42,6 @@ public class SecurityConfig {
         return new InMemoryUserDetailsManager(user);
     }
 
+*/
 
 }

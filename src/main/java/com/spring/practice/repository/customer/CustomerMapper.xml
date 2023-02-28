@@ -13,7 +13,7 @@
     </resultMap>
 
     <resultMap id="roleResult" type="com.spring.practice.entity.Role">
-        <id property="id" column="id"/>
+        <id property="roleId" column="role_id"/>
         <result property="createAt" column="create_at"/>
         <result property="roleName" column="role_name"/>
         <result property="updateAt" column="update_at"/>
@@ -34,12 +34,13 @@
     <!--Insert new Customer -->
     <insert id="createNewCustomer" useGeneratedKeys="true"  parameterType = "com.spring.practice.entity.Customer">
         INSERT INTO customer (
-        id
-         ,name
+          id
+        , name
         , email
         , phone_number
         , loyalty
         , create_at
+        , update_at
         ) VALUES (
           #{id}
         , #{name}
@@ -47,6 +48,7 @@
         , #{phoneNumber}
         , #{loyalty}
         , sysdate()
+        , null
         )
     </insert>
 

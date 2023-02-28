@@ -8,7 +8,7 @@ import java.util.List;
 
 @Mapper
 public interface RoleMapper {
-    Role findByRoleName(@Param("roleName") String roleName);
+    List<Role> findByRoleName(@Param("listRole") List<String> roleName);
 
     int createNewRole(Role role);
 

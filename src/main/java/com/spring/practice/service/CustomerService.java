@@ -1,12 +1,13 @@
 package com.spring.practice.service;
 
+import com.spring.practice.dto.CustomerCreationDTO;
 import com.spring.practice.dto.CustomerDto;
 
 import java.util.List;
 
 public interface CustomerService {
     // Create Operation
-    CustomerDto createNewCustomer(CustomerDto customer);
+    int createNewCustomer(CustomerCreationDTO customer);
 
     // Read Operation
     List<CustomerDto> getAllCustomer();
@@ -15,9 +16,9 @@ public interface CustomerService {
     List<CustomerDto> getCustomerById(Integer id);
 
     //Update operation
-    CustomerDto updateCustomer(CustomerDto customer, Integer id);
+    int updateCustomer(CustomerDto customer, Integer id);
 
     //Delete Operation
-    void deleteCustomerById(Integer id);
+    int deleteCustomerById(Integer id);
 
 }

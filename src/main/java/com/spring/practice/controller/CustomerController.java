@@ -1,5 +1,6 @@
 package com.spring.practice.controller;
 
+import com.spring.practice.dto.CustomerCreationDTO;
 import com.spring.practice.dto.CustomerDto;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.web.bind.annotation.*;
@@ -8,7 +9,6 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/customer")
-@SecurityRequirement(name = "javainuseapi")
 public interface CustomerController {
 
     @GetMapping(value = {"/allCustomers"})
@@ -24,5 +24,5 @@ public interface CustomerController {
     CustomerDto updateCustomerById(@RequestBody CustomerDto customer, @PathVariable("id") int id);
 
     @PostMapping(value = {"/create"})
-    CustomerDto createNewCustomer(@RequestBody CustomerDto customerDto);
+    int createNewCustomer(@RequestBody CustomerCreationDTO customerDto);
 }
