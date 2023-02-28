@@ -35,6 +35,7 @@ public class CustomerServiceImpl implements CustomerService {
         customer.setLoyalty(false);
         List<Role> roleListFindByName = roleService.getRoleByName(customerCreation.getRoles());
         customer.setRoles(roleListFindByName);
+        //TODO: Save in 2 table Customer and customer_roles(intermediate table of ManyToMany generated)
         return  customerMapper.createNewCustomer(customer);
     }
 
