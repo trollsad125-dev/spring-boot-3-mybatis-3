@@ -22,10 +22,9 @@
                         , role_name
                         , create_at
         )
-        VALUES (
-                        id
-                        ,#{roleName}
-                        ,sysdate()
+        VALUES ( role_id
+               , #{roleName}
+               ,sysdate()
                 )
     </insert>
     <!--Get all Role-->

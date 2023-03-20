@@ -1,11 +1,17 @@
 package com.spring.practice.dto;
 
-import lombok.Getter;
-import java.util.*;
-@Getter
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+
+import java.util.List;
+
+@Data
 public class CustomerCreationDTO {
-    private String name;
+
+    private @NotNull(message = "Please assign a name") String name;
     private String phoneNumber;
-    private String email;
-    private List<String> roles;
+
+    private @NotNull(message = "Please assign a email") String email;
+
+    private @NotNull(message = "Please assign a role or multi roles") List<String> roles;
 }

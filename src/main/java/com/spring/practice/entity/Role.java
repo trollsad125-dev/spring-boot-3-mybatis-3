@@ -6,8 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,12 +16,8 @@ import java.time.LocalDateTime;
 @Table(name = "role")
 public class Role {
     @Id
-    @SequenceGenerator(name="role_id_sequences", sequenceName="role_id_sequences")
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "role_id_sequences"
-    )
-    @Column(name = "role_id",nullable = false,unique = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id", nullable = false, unique = true)
     private int roleId;
     @Column(name = "role_name",nullable = false)
     private String roleName;

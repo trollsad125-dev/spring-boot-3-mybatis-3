@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.practice.repository.customer_roles.CustomerRolesMapper">
+
+    <insert id="insertCustomerRoles" parameterType="java.util.List">
+        INSERT INTO customer_roles (
+        customer_id,
+        roles_role_id)
+        VALUES
+        <foreach collection="list" item="element" index="index" open="(" separator="),(" close=")">
+            #{element.customer_id},
+            #{element.roles_role_id},
+        </foreach>
+    </insert>
+    <!--Delete Role-->
+    <delete id="deleteRoleById" parameterType="int">
+        DELETE
+        from role
+        WHERE role_id = #{id};
+    </delete>
+
+</mapper>

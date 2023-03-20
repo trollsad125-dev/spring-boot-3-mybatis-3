@@ -4,8 +4,8 @@ import com.spring.practice.controller.CustomerController;
 import com.spring.practice.dto.CustomerCreationDTO;
 import com.spring.practice.dto.CustomerDto;
 import com.spring.practice.service.CustomerService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -44,7 +44,7 @@ public class CustomerControllerImpl implements CustomerController {
     }
 
     @Override
-    public int createNewCustomer(@RequestBody CustomerCreationDTO customerDto) {
+    public int createNewCustomer(@Valid @RequestBody CustomerCreationDTO customerDto) {
         return customerService.createNewCustomer(customerDto);
     }
 }

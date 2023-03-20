@@ -1,13 +1,14 @@
 package com.spring.practice.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,12 +17,8 @@ import java.util.*;
 @Table(name = "customer")
 public class Customer {
     @Id
-    @SequenceGenerator(name="customer_id_sequences", sequenceName="customer_id_sequences")
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "customer_id_sequences"
-    )
-    @Column(name = "id", nullable = false,unique = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, unique = true)
     private int id;
     @Column(name = "name", nullable = false)
     private String name;
@@ -34,6 +31,7 @@ public class Customer {
     //TODO: Investigate why using CascadeType.MERGE || CascadeType.PERSIST
     //TODO: https://stackoverflow.com/questions/43846652/database-design-for-user-userrole-many-to-many-relationship
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @NotNull(message = "please assign the role")
     private List<Role> roles;
     @Column(name = "create_at")
     private LocalDateTime createAt;
