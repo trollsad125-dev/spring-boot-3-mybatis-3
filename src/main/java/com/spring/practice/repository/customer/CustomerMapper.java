@@ -10,7 +10,7 @@ import java.util.List;
 public interface CustomerMapper {
     Customer findByCustomerId(@Param("id") int id);
 
-    int createNewCustomer(@Param("customer") Customer customer);
+    int createNewCustomer(Customer customer);
 
     List<Customer> getAllCustomer();
 

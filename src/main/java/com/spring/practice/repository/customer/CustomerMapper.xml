@@ -25,9 +25,8 @@
         FROM customer
     </select>
     <!--Select Customer by Id-->
-    <select id="findByCustomerId" resultMap="customerResult">
-        SELECT
-            *
+    <select id="findByCustomerId" parameterType="Integer" resultMap="customerResult">
+        SELECT *
         FROM customer
         WHERE id = #{id}
     </select>
